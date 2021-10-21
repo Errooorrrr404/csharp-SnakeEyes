@@ -56,7 +56,6 @@ namespace Domain
             if (HasSnakeEyes)
             {
                 _highscores.Add(Total);
-                Restart();
             } else
             {
                 Total += (Eye1 + Eye2);
