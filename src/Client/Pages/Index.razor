@@ -1,9 +1,16 @@
 ﻿@page "/"
-@using Client.Components // namespace of the Dice component
+@using Domain
 
 <h1>Snake Eyes</h1>
 
 <div>
-    <Dice Pips="4" />
-    <Dice Pips="6" />
+    <Dice Pips="@_game.Eye1;" />
+    <Dice Pips="@_game.Eye2;" />
 </div>
+
+<p>
+    Score: @_game.Total
+</p>
+@code  {
+    private Game _game = new Game();
+}
