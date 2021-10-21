@@ -7,7 +7,7 @@ namespace Domain
     {
         #region Fields
 
-        private readonly List<int> _highscores;
+        private readonly List<int> _highscores = new();
         private Dice _dice1;
         private Dice _dice2;
         #endregion
@@ -25,11 +25,8 @@ namespace Domain
                 return _dice2.Dots;
             }
         }
-        public bool HasSnakeEyes { get
-            {
-                return Eye1 == 1 && Eye2 == 1;
-            }
-        }
+        public bool HasSnakeEyes => Eye1 == 1 && Eye2 == 1;
+
         public IReadOnlyList<int> HighScores { get
             {
                 return _highscores.AsReadOnly();
